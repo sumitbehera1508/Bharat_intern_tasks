@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="0"
+        android:gravity="right|bottom"
+        android:textAlignment="gravity"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ResultText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:text="=0"
+        android:visibility="invisible"
+        android:textColor="#757171"
+        android:textAlignment="textEnd"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResultText">
+
+        <Button
+            android:id="@+id/num1"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="1"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/changeSign"
+            app:layout_constraintEnd_toStartOf="@+id/num2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num4" />
+
+        <Button
+            android:id="@+id/num2"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="2"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num1"
+            app:layout_constraintEnd_toStartOf="@+id/num3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num1" />
+
+        <Button
+            android:id="@+id/num3"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="3"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num1"
+            app:layout_constraintEnd_toStartOf="@+id/add"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num2" />
+
+        <Button
+            android:id="@+id/num4"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="4"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/num1"
+            app:layout_constraintEnd_toStartOf="@+id/num5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num7" />
+
+        <Button
+            android:id="@+id/num5"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="5"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num4"
+            app:layout_constraintEnd_toStartOf="@+id/num6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num4" />
+
+        <Button
+            android:id="@+id/num6"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="6"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num4"
+            app:layout_constraintEnd_toStartOf="@+id/sub"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num5" />
+
+        <Button
+            android:id="@+id/num7"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="7"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/num4"
+            app:layout_constraintEnd_toStartOf="@+id/num8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AC" />
+
+        <Button
+            android:id="@+id/num8"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="8"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num7"
+            app:layout_constraintEnd_toStartOf="@+id/num9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num7" />
+
+        <Button
+            android:id="@+id/num9"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="9"
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num7"
+            app:layout_constraintEnd_toStartOf="@+id/multiply"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num8" />
+
+        <Button
+            android:id="@+id/AC"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="AC"
+            android:onClick="onAllclerar"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/num7"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="+"
+            android:onClick="onOperation"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num3" />
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="-"
+            android:textAlignment="center"
+            android:onClick="onOperation"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num6" />
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="X"
+            android:onClick="onMultiply"
+            android:textSize="25sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/num7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num9" />
+
+        <Button
+            android:id="@+id/changeSign"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="+/-"
+            android:onClick="onSignChange"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num1" />
+
+        <Button
+            android:id="@+id/percentage"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="%"
+            android:onClick="onPercentage"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/AC"
+            app:layout_constraintEnd_toStartOf="@+id/divison"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/divison"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="÷"
+            android:onClick="onDivide"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/AC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/percentage" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="C"
+            android:textSize="30sp"
+            android:onClick="onClear"
+            app:layout_constraintBaseline_toBaselineOf="@+id/AC"
+            app:layout_constraintEnd_toStartOf="@+id/percentage"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/AC" />
+
+        <Button
+            android:id="@+id/num0"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:backgroundTint="@color/white"
+            android:shadowRadius="36"
+            android:text="0"
+            android:textSize="40sp"
+            android:onClick="onDigitClick"
+            app:layout_constraintBaseline_toBaselineOf="@+id/changeSign"
+            app:layout_constraintEnd_toStartOf="@+id/dot"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/changeSign" />
+
+        <Button
+            android:id="@+id/dot"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="."
+            android:onClick="onDigitClick"
+            android:textSize="40sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/changeSign"
+            app:layout_constraintEnd_toStartOf="@+id/ans"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/num0" />
+
+        <Button
+            android:id="@+id/ans"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/specialbg"
+            android:shadowRadius="36"
+            android:text="="
+            android:onClick="onEqualClick"
+            android:textSize="25sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/changeSign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dot" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
